@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    scroll-behavior: smooth; 
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logo {
+    font-weight: 700;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    animation: fadeDown 1s ease;
+}
+
+.hero-text span {
+    color: #00ffd5;
+}
+
+.hero-text button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    background: #00ffd5;
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hero-text button:hover {
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    padding: 15px 25px;
+    background: #00ffd5;
+    color: black;
+    border-radius: 25px;
+    animation: float 3s infinite;
+}
+
+/* PROJECTS */
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 20px;
+    width: 260px;
+    transition: transform 0.3s;
+}
+
+.card a {
+    outline: none;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* CONTACT */
+form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+form button {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background: #00ffd5;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal-content {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    animation: fadeDown 0.5s ease;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    font-size: 25px;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 5px;
+}
+@media (max-width: 768px) {
+
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        display: none;
+        animation: fadeDown 0.4s ease;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+:root {
+    --accent: #00ffd5;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg: #0a0e12;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: none; /* We will create a custom cursor in JS */
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 🔹 PREMIUM BACKGROUND BLOB */
+.bg-blob {
+    position: fixed;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0, 255, 213, 0.15) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 🔹 CUSTOM CURSOR */
+.cursor {
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    width: 40px; height: 40px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 998;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 🔹 BENTO GRID FOR PROJECTS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+}
+
+.card h3 { color: var(--accent); margin-bottom: 10px; }
+
+/* 🔹 NAV GLASSMorphism */
+nav {
+    backdrop-filter: blur(20px);
+    background: rgba(10, 14, 18, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+}
